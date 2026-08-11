@@ -88,3 +88,4 @@ jobs:
         run: |
           kubectl get pods -n project-bedrock
           kubectl get services -n project-bedrock
+
