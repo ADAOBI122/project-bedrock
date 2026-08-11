@@ -77,12 +77,9 @@ jobs:
             --region "${AWS_REGION}" \
             --name "${EKS_CLUSTER_NAME}"
 
-      - name: Deploy Kubernetes manifests
+      - name: Deploy Kubernetes namespace
         run: |
           kubectl apply -f kubernetes/namespace.yaml
-          kubectl apply -f kubernetes/mongodb.yaml
-          kubectl apply -f kubernetes/backend-deployment.yaml
-          kubectl apply -f kubernetes/backend-service.yaml
 
       - name: Verify deployment
         run: |
