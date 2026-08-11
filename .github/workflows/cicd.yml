@@ -56,7 +56,7 @@ jobs:
           docker push "${IMAGE}:${IMAGE_TAG}"
           docker push "${IMAGE}:latest"
 
-  deploy:
+    deploy:
     name: Deploy to EKS
     needs: build-and-push
     runs-on: ubuntu-latest
@@ -77,12 +77,27 @@ jobs:
             --region "${AWS_REGION}" \
             --name "${EKS_CLUSTER_NAME}"
 
-      - name: Deploy Kubernetes namespace
+      - name: Deploy Kubernetes manifests
         run: |
           kubectl apply -f kubernetes/namespace.yaml
+          kubectl apply -f kubernetes/mongodb.yaml
+          kubectl apply -f kubernetes/backend-deployment.yaml
+          kubectl apply -f kubernetes/backend-service.yaml
+
+      - name: Wait for MongoDB
+        run: |
+          kubectl rollout status deployment/mongo \
+            -n project-bedrock \
+            --timeout=180s
+
+      - name: Wait for backend
+        run: |
+          kubectl rollout status deployment/backend \
+            -n project-bedrock \
+            --timeout=180s
 
       - name: Verify deployment
         run: |
-          kubectl get pods -n project-bedrock
+          kubectl get pods -n project-bedrock -o wide
           kubectl get services -n project-bedrock
-
+          kubectl get deployments -n project-bedrock
