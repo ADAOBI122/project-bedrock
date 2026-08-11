@@ -1,0 +1,14 @@
+app:
+  persistence:
+    provider: postgresql
+    endpoint: project-bedrock-orders.c8504u2mspag.us-east-1.rds.amazonaws.com
+    database: orders
+    secret:
+      create: false
+      name: orders-db
+
+postgresql:
+  create: false
+
+rabbitmq:
+  create: true

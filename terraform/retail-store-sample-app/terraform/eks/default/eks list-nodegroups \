@@ -1,0 +1,57 @@
+{
+    "nodegroup": {
+        "nodegroupName": "managed-nodegroup-3-20260810193413114100000003",
+        "nodegroupArn": "arn:aws:eks:us-east-1:206362095513:nodegroup/retail-store/managed-nodegroup-3-20260810193413114100000003/eccff695-8f1e-ea3f-0d85-b5bfa9b2e4f4",
+        "clusterName": "retail-store",
+        "version": "1.33",
+        "releaseVersion": "1.33.13-20260801",
+        "createdAt": "2026-08-10T19:34:15.473000+00:00",
+        "modifiedAt": "2026-08-10T20:20:09.279000+00:00",
+        "status": "DELETING",
+        "capacityType": "ON_DEMAND",
+        "scalingConfig": {
+            "minSize": 1,
+            "maxSize": 3,
+            "desiredSize": 1
+        },
+        "instanceTypes": [
+            "t3.small"
+        ],
+        "subnets": [
+            "subnet-014524f047c73b666"
+        ],
+        "amiType": "AL2023_x86_64_STANDARD",
+        "nodeRole": "arn:aws:iam::206362095513:role/managed-nodegroup-3-eks-node-group-20260810175611092300000014",
+        "resources": {
+            "autoScalingGroups": [
+                {
+                    "name": "eks-managed-nodegroup-3-20260810193413114100000003-eccff695-8f1e-ea3f-0d85-b5bfa9b2e4f4"
+                }
+            ]
+        },
+        "health": {
+            "issues": [
+                {
+                    "code": "AsgInstanceLaunchFailures",
+                    "message": "Could not launch On-Demand Instances. VcpuLimitExceeded - You have requested more vCPU capacity than your current vCPU limit of 8 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit. Launching EC2 instance failed.",
+                    "resourceIds": [
+                        "eks-managed-nodegroup-3-20260810193413114100000003-eccff695-8f1e-ea3f-0d85-b5bfa9b2e4f4"
+                    ]
+                }
+            ]
+        },
+        "updateConfig": {
+            "maxUnavailablePercentage": 33
+        },
+        "launchTemplate": {
+            "name": "node_group_3-20260810180634995800000026",
+            "version": "1",
+            "id": "lt-06b28b20dce3ca876"
+        },
+        "tags": {
+            "environment-name": "retail-store",
+            "created-by": "retail-store-sample-app",
+            "Name": "managed-nodegroup-3"
+        }
+    }
+}

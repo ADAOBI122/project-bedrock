@@ -1,0 +1,11 @@
+app:
+  persistence:
+    provider: mysql
+    endpoint: project-bedrock-catalog.c8504u2mspag.us-east-1.rds.amazonaws.com
+    database: catalog
+    secret:
+      create: false
+      name: catalog-db
+
+mysql:
+  create: false
