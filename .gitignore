@@ -1,8 +1,19 @@
 # Terraform
 .terraform/
+**/.terraform/
+
 *.tfstate
 *.tfstate.*
+*.tfplan
+**/terraform.tfstate*
+**/*.tfstate*
+**/*.tfplan
+
 crash.log
+**/crash.log
+
+plan.txt
+**/plan.txt
 
 # Terraform variable files - may contain secrets
 *.tfvars
@@ -18,3 +29,10 @@ crash.log
 
 # AWS local files
 .aws/
+
+# Secrets
+*.pem
+*.key
+*.env
+*.env.*
+!.env.example

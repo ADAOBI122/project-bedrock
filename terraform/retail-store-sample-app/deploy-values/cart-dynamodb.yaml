@@ -1,9 +1,0 @@
-app:
-  persistence:
-    provider: dynamodb
-    dynamodb:
-      tableName: project-bedrock-carts
-      createTable: false
-
-dynamodb:
-  create: false
