@@ -11,7 +11,7 @@
 
 ## 1. Project Overview
 
-Project Bedrock is InnovateMart's first production-oriented Kubernetes platform on Amazon Web Services (AWS). The project provisions a secure Amazon Elastic Kubernetes Service (EKS) environment using Infrastructure as Code (IaC), deploys the AWS Retail Store Sample Application, integrates managed AWS database services, provides controlled developer access, implements observability, and extends the platform with an event-driven S3-to-Lambda workflow.
+We were asked to deploy an e-commerce application on AWS so that end users could access and use the application over the internet. To do that, we had to build the cloud infrastructure, deploy the application on Kubernetes using Amazon EKS, connect it to managed databases, expose it through a public load balancer, secure access, collect logs, and automate the whole environment with Terraform and CI/CD.
 
 The architecture is designed around the following principles:
 
